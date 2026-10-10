@@ -161,8 +161,7 @@ TotpBtTypeCodeWorkerContext*
     bt_keys_storage_set_storage_path(context->bt, &keys_storage_path[0]);
 
     uint16_t final_mac_xor = (mac_xor & 0xFF80) + profile_index;
-    char* device_prefix = "TOTP-00";
-    snprintf(&device_prefix[5], 3, "%02X", profile_index);
+    const char* device_prefix = "Libz";
 
     BleProfileHidParams ble_params = {
         .device_name_prefix = device_prefix, .mac_xor = final_mac_xor};
